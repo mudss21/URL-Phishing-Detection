@@ -1,38 +1,50 @@
-# URL-Based Phishing Detection Using Machine Learning
+# 🔐 Hybrid URL Phishing Detection System (AI + Blacklist)
 
-This project implements a URL-based phishing detection system using multiple machine learning algorithms. The objective is to accurately classify URLs as **phishing** or **legitimate** based on extracted lexical and statistical features.
+This project implements a **hybrid phishing detection system** that combines traditional **blacklist-based detection** with advanced **machine learning models** to accurately classify URLs as **phishing** or **legitimate**. The system is designed to handle both known threats (via blacklist) and unknown/zero-day attacks (via ML models).
 
 ---
 
-## 🚀 Features
-- Handles missing values using median imputation
-- Applies feature standardization for better model performance
-- Implements and compares multiple ML classifiers
-- Provides detailed evaluation using accuracy, confusion matrix, and classification report
+## 🚀 Key Features
+- Hybrid detection approach (Blacklist + Machine Learning)
+- Real-time URL classification (Phishing / Legitimate)
+- Detection of **zero-day phishing attacks**
+- Feature extraction from URLs (lexical, domain-based, security indicators)
+- Data preprocessing including missing value handling and normalization
+- Model comparison and performance evaluation
+- Modular pipeline for scalability and improvement
 
 ---
 
 ## 🧠 Machine Learning Models Used
-- Decision Tree Classifier
-- Random Forest Classifier
-- Support Vector Machine (SVM)
+- Random Forest Classifier (RF)
 - K-Nearest Neighbors (KNN)
 - Artificial Neural Network (ANN / MLP)
 
 ---
 
-## 📊 Workflow
-1. Load and preprocess dataset  
-2. Split data into training and testing sets  
-3. Handle missing values using `SimpleImputer`  
-4. Normalize features using `StandardScaler`  
-5. Train multiple classification models  
-6. Evaluate performance using standard metrics  
+## ⚙️ System Architecture
+1. **Blacklist Check**  
+   - URL is first checked against a database of known malicious domains  
+   - Immediate classification if found  
+
+2. **Feature Extraction**  
+   - URL-based features (length, special characters, keywords, etc.)  
+   - Domain & security-based attributes  
+
+3. **Data Preprocessing**  
+   - Missing value handling using `SimpleImputer`  
+   - Feature scaling using `StandardScaler`  
+
+4. **Machine Learning Classification**  
+   - Trained models (RF, KNN, ANN) predict whether URL is phishing or legitimate  
+
+5. **Final Prediction**  
+   - Combined result ensures high accuracy and faster detection  
 
 ---
 
-## 📁 Dataset
-- File: `Dataset(2).csv`
+## 📊 Dataset
+- File: `Dataset_useful_top20.csv`
 - Target Column: `Type`
 - Labels:
   - `0` → Legitimate URL  
@@ -41,9 +53,25 @@ This project implements a URL-based phishing detection system using multiple mac
 ---
 
 ## 🛠️ Technologies Used
-- Python
-- Pandas
-- Scikit-learn
+- **Programming Language:** Python  
+- **Machine Learning:** Scikit-learn (RF, KNN), TensorFlow/Keras (ANN)  
+- **Data Processing:** Pandas, NumPy  
+- **Feature Engineering:** URL-based + Domain-based features  
+- **Visualization:** Matplotlib, Seaborn  
+- **Other Tools:** Jupyter Notebook, Git  
 
 ---
 
+## 📈 Evaluation Metrics
+- Accuracy Score  
+- Confusion Matrix  
+- Classification Report (Precision, Recall, F1-score)  
+
+---
+
+## 💡 Project Highlights
+- Combines **speed of blacklist detection** with **intelligence of ML models**  
+- Capable of detecting **previously unseen phishing URLs**  
+- Demonstrates real-world application of **AI in cybersecurity**  
+
+---
